@@ -12,8 +12,6 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
-import FacebookIcon from 'src/icons/Facebook';
-import GoogleIcon from 'src/icons/Google';
 import Page from 'src/components/Page';
 
 const useStyles = makeStyles((theme) => ({
@@ -43,15 +41,15 @@ const LoginView = () => {
         <Container maxWidth="sm">
           <Formik
             initialValues={{
-              email: 'demo@devias.io',
-              password: 'Password123'
+              email: 'admin@d-ccb.com',
+              password: 'admin'
             }}
             validationSchema={Yup.object().shape({
               email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
               password: Yup.string().max(255).required('Password is required')
             })}
             onSubmit={() => {
-              navigate('/app/dashboard', { replace: true });
+              navigate('/app/statistic', { replace: true });
             }}
           >
             {({
@@ -65,11 +63,12 @@ const LoginView = () => {
             }) => (
               <form onSubmit={handleSubmit}>
                 <Box mb={3}>
+                
                   <Typography
                     color="textPrimary"
                     variant="h2"
                   >
-                    Sign in
+                    Login
                   </Typography>
                   <Typography
                     color="textSecondary"
@@ -79,42 +78,7 @@ const LoginView = () => {
                     Sign in on the internal platform
                   </Typography>
                 </Box>
-                <Grid
-                  container
-                  spacing={3}
-                >
-                  <Grid
-                    item
-                    xs={12}
-                    md={6}
-                  >
-                    <Button
-                      color="primary"
-                      fullWidth
-                      startIcon={<FacebookIcon />}
-                      onClick={handleSubmit}
-                      size="large"
-                      variant="contained"
-                    >
-                      Login with Facebook
-                    </Button>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    md={6}
-                  >
-                    <Button
-                      fullWidth
-                      startIcon={<GoogleIcon />}
-                      onClick={handleSubmit}
-                      size="large"
-                      variant="contained"
-                    >
-                      Login with Google
-                    </Button>
-                  </Grid>
-                </Grid>
+   
                 <Box
                   mt={3}
                   mb={1}
@@ -124,7 +88,8 @@ const LoginView = () => {
                     color="textSecondary"
                     variant="body1"
                   >
-                    or login with email address
+                    {/* or login with email address */}
+                    {/* <img src="/logo.png" style={{ height: 100, width: 100 }} /> */}
                   </Typography>
                 </Box>
                 <TextField
@@ -162,7 +127,7 @@ const LoginView = () => {
                     type="submit"
                     variant="contained"
                   >
-                    Sign in now
+                    Login
                   </Button>
                 </Box>
                 <Typography
@@ -173,10 +138,10 @@ const LoginView = () => {
                   {' '}
                   <Link
                     component={RouterLink}
-                    to="/register"
+                    to="/"
                     variant="h6"
                   >
-                    Sign up
+                    Contact the admin
                   </Link>
                 </Typography>
               </form>

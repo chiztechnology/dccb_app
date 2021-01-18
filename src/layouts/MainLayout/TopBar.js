@@ -26,8 +26,13 @@ const TopBar = ({ className, ...rest }) => {
       {...rest}
     >
       <Toolbar className={classes.toolbar}>
-        <RouterLink to="/">
-          <Logo />
+        <RouterLink to="/" style={{ display: 'flex' }}>
+          {/* <Logo /> */}
+          <img src="/logo.png" style={{ height: 50, width: 50 }} />
+          <div style={{ alignSelf: 'center', marginLeft: 10 }}>
+            <h3 style={{ color: 'white', fontSize: 14, fontFamily: 'arial', fontWeight: 'normal', textTransform: 'uppercase' }}>Republique Islamique de  mauritainie</h3>
+            <h4 style={{ color: 'white', fontSize: 12, fontFamily: 'arial', fontWeight: 'normal' }}>Ministére de l’Interieur et de la Decentralisation </h4>
+          </div>
         </RouterLink>
       </Toolbar>
     </AppBar>

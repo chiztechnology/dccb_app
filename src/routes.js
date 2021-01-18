@@ -29,7 +29,7 @@ import NotFoundView from 'src/views/errors/NotFoundView'
             {path:'login', element:<LoginView/>},
             // {path:'register', element:<RegisterView/>},
             {path:'404', element:<NotFoundView/>},
-            {path:'/', element:<Navigate to="/app/statistic"/>},
+            {path:'/', element:<Navigate to="/login"/>},
             {path:'*', element: <Navigate to="/404"/>}
         ]
     }
